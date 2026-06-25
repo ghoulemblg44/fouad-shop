@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fouad Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <h2>🛍️ Fouad Shop</h2>
+    
+        <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Produits</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    
+        <p id="cart-count">🛒 0</p>
+    </nav>
+
+    <section class="hero">
+        <h1>FOUAD SHOP</h1>
+        <p>Style • Qualité • Élégance</p>
+    </section>
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Rechercher un produit..."
+            onkeyup="searchProducts()"
+        >
+    </div>
+    <section class="advantages">
+
+        <h2>Pourquoi choisir Fouad Shop ?</h2>
+    
+        <div class="product-grid">
+    
+            <div class="card">
+                <h3>🚚 Livraison Rapide</h3>
+                <p>Partout en Algérie</p>
+            </div>
+    
+            <div class="card">
+                <h3>💎 Qualité</h3>
+                <p>Produits sélectionnés</p>
+            </div>
+    
+            <div class="card">
+                <h3>📞 Support</h3>
+                <p>Disponible sur WhatsApp</p>
+            </div>
+    
+        </div>
+    
+    </section>
+
+    <section class="products">
+
+        <h2>Nos Produits</h2>
+
+        <div class="product-grid">
+
+            <div class="card">
+                <img src="tshirt.jpg">
+                <h3>Oversize Black T-Shirt</h3>
+                <p class="desc">
+                    Tissu premium - Confortable
+                    </p>
+                <p>2500 DA</p>
+                <select>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                </select>
+                <br><br>
+                <button onclick="orderProduct('T-Shirt Noir',2500)">
+                    Acheter
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="hoodie.jpg">
+                <h3>Urban Hoodie</h3>
+                <p class="desc">
+                    Tissu premium - Confortable
+                    </p>
+                <p>4500 DA</p>
+                <select>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                </select>
+                <br><br>
+                <button onclick="orderProduct('Hoodie Blanc',4500)">
+                    Acheter
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="jean.jpg">
+                <h3>Slim Fit Jeans</h3>
+                <p class="desc">
+                    Tissu premium - Confortable
+                    </p>
+                <p> 3500 DA</p>
+                <select>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                </select>
+                <br><br>
+                <button onclick="orderProduct('Jean Bleu',3500)">
+                    Acheter
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+    <section class="cart-section">
+
+        <h2>🛒 Mon Panier</h2>
+    
+        <ul id="cart-items"></ul>
+    
+        <h3 id="total">Total : 0 DA</h3>
+    
+    </section>
+    <section class="order-form">
+
+        <h2>Commander</h2>
+    
+        <input type="text" placeholder="Votre Nom">
+        <input type="tel" placeholder="Téléphone">
+    
+        <select>
+            <option>Khenchela</option>
+            <option>Alger</option>
+            <option>Oran</option>
+            <option>Constantine</option>
+            <option>Blida</option>
+            <option>Sétif</option>
+        </select>
+    
+        <textarea placeholder="Adresse complète"></textarea>
+    
+        <button>Envoyer la commande</button>
+    
+    </section>
+
+    <footer>
+        <h3>📞 Contact Fouad Shop</h3>
+        <p>WhatsApp : +213 669432393</p>
+        <p>© 2026 Fouad Shop</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <footer class="footer">
+        <h3>🛍️ Fouad Shop</h3>
+    
+        <p>📞 WhatsApp: +213 XX XX XX XX XX</p>
+        <p>📷 Instagram: @fouadshop</p>
+        <p>📘 Facebook: Fouad Shop</p>
+    
+        <p class="copy">
+            © 2026 Fouad Shop - Tous droits réservés
+        </p>
+    </footer>
+
+</body>
+</html>
