@@ -219,3 +219,46 @@ select{
     color:#666;
     padding:0 10px;
 }
+
+.product-details{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:50px;
+    padding:60px 20px;
+    flex-wrap:wrap;
+}
+
+.product-details img{
+    width:350px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.details{
+    max-width:450px;
+}
+
+.details h1{
+    font-size:38px;
+}
+
+.price{
+    font-size:28px;
+    color:#e63946;
+    margin:20px 0;
+    font-weight:bold;
+}
+
+.details button{
+    background:black;
+    color:white;
+    border:none;
+    padding:15px 30px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.details button:hover{
+    background:#333;
+}
