@@ -9,20 +9,41 @@
 <body>
 
     <nav>
-        <h2>🛍️ Fouad Shop</h2>
+
+        <div class="logo">
+            <h2>FOUAD SHOP</h2>
+        </div>
     
-        <ul>
+        <ul class="menu">
             <li><a href="#">Accueil</a></li>
-            <li><a href="#">Produits</a></li>
+            <li><a href="#products">Produits</a></li>
+            <li><a href="#">Promotions</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     
-        <p id="cart-count">🛒 0</p>
+        <div class="nav-icons">
+            <span>🔍</span>
+            <span>❤️</span>
+            <span>🛒 <strong id="cart-count">0</strong></span>
+        </div>
+    
     </nav>
-
     <section class="hero">
-        <h1>FOUAD SHOP</h1>
-        <p>Style • Qualité • Élégance</p>
+
+        <div class="hero-content">
+    
+            <h1>Découvrez les Meilleures Offres</h1>
+    
+            <p>
+                Homme • Femme • Enfant • Accessoires
+            </p>
+    
+            <a href="#products" class="hero-btn">
+                🛍️ Acheter Maintenant
+            </a>
+    
+        </div>
+    
     </section>
     <div class="search-box">
         <input
@@ -39,16 +60,28 @@
         <div class="product-grid">
     
             <div class="card">
+
+                <span class="badge">Nouveau</span>
+            
+                <span class="favorite">❤</span>
                 <h3>🚚 Livraison Rapide</h3>
                 <p>Partout en Algérie</p>
             </div>
     
             <div class="card">
+
+                <span class="badge">Nouveau</span>
+            
+                <span class="favorite">❤</span>
                 <h3>💎 Qualité</h3>
                 <p>Produits sélectionnés</p>
             </div>
     
             <div class="card">
+
+                <span class="badge">Nouveau</span>
+            
+                <span class="favorite">❤</span>
                 <h3>📞 Support</h3>
                 <p>Disponible sur WhatsApp</p>
             </div>
@@ -56,14 +89,59 @@
         </div>
     
     </section>
+    <section class="filters">
 
-    <section class="products">
+        <button onclick="filterProducts('all')">Tous</button>
+    
+        <button onclick="filterProducts('homme')">Homme</button>
+    
+        <button onclick="filterProducts('femme')">Femme</button>
+    
+        <button onclick="filterProducts('enfant')">Enfant</button>
+    
+        <button onclick="filterProducts('accessoires')">Accessoires</button>
+    
+    </section>
+
+    <section class="products" id="products">
+        <section class="categories">
+
+            <h2>Nos Catégories</h2>
+        
+            <div class="category-grid">
+        
+                <div class="category-card">
+                    <span>👨</span>
+                    <h3>Homme</h3>
+                </div>
+        
+                <div class="category-card">
+                    <span>👩</span>
+                    <h3>Femme</h3>
+                </div>
+        
+                <div class="category-card">
+                    <span>👶</span>
+                    <h3>Enfant</h3>
+                </div>
+        
+                <div class="category-card">
+                    <span>🎒</span>
+                    <h3>Accessoires</h3>
+                </div>
+        
+            </div>
+        
+        </section>
+    </section>
 
         <h2>Nos Produits</h2>
 
         <div class="product-grid">
 
-            <div class="card">
+            <div class="card" data-category="homme">
+
+            </div>
                 <a href="product.html?product=tshirt">
                     <img src="tshirt.jpg" alt="">
                 </a>
@@ -71,7 +149,8 @@
                 <p class="desc">
                     Tissu premium - Confortable
                     </p>
-                <p>2500 DA</p>
+                    <p class="old-price">3200 DA</p>
+                    <p class="new-price">2500 DA</p>
                 <select>
                     <option>S</option>
                     <option>M</option>
@@ -79,12 +158,17 @@
                     <option>XL</option>
                 </select>
                 <br><br>
+                <div class="stars">
+                    ⭐⭐⭐⭐⭐
+                    </div>
                 <button onclick="orderProduct('T-Shirt Noir',2500)">
                     Acheter
                 </button>
             </div>
 
-            <div class="card">
+            <div class="card" data-category="homme">
+
+            </div>
                 <a href="product.html?product=hoodie">
                     <img src="hoodie.jpg" alt="">
                 </a>
@@ -105,7 +189,7 @@
                 </button>
             </div>
 
-            <div class="card">
+            <div class="card" data-category="homme"></div>
                 <a href="product.html?product=jean">
                     <img src="jean.jpg" alt="">
                 </a>
@@ -157,6 +241,44 @@
         <textarea placeholder="Adresse complète"></textarea>
     
         <button>Envoyer la commande</button>
+    
+    </section>
+    <section class="offers">
+
+        <h2>🔥 Offres du Jour</h2>
+    
+        <div class="offer-grid">
+    
+            <div class="offer-card">
+                <span class="promo">-40%</span>
+                <img src="https://via.placeholder.com/220" alt="">
+                <h3>Smart Watch</h3>
+                <p><del>6000 DA</del></p>
+                <h2>3600 DA</h2>
+            </div>
+    
+            <div class="offer-card">
+                <span class="promo">-30%</span>
+                <img src="https://via.placeholder.com/220" alt="">
+                <h3>Écouteurs Bluetooth</h3>
+                <p><del>3000 DA</del></p>
+                <h2>2100 DA</h2>
+            </div>
+    
+            <div class="offer-card">
+                <span class="promo">-50%</span>
+                <img src="https://via.placeholder.com/220" alt="">
+                <h3>Sac à Dos</h3>
+                <p><del>4000 DA</del></p>
+                <h2>2000 DA</h2>
+            </div>
+    
+        </div>
+    
+        <div class="countdown">
+            ⏰ Fin de l'offre dans :
+            <h1 id="timer">24:00:00</h1>
+        </div>
     
     </section>
 

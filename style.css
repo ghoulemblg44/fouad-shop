@@ -262,3 +262,264 @@ select{
 .details button:hover{
     background:#333;
 }
+
+.hero{
+    height:90vh;
+    background:url("https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1920&auto=format&fit=crop") center center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.55);
+}
+
+.hero-content{
+    position:relative;
+    text-align:center;
+    color:white;
+    z-index:1;
+}
+
+.hero-content h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:24px;
+    margin-bottom:30px;
+}
+
+.hero-btn{
+    display:inline-block;
+    background:#ff6b00;
+    color:white;
+    text-decoration:none;
+    padding:15px 35px;
+    border-radius:10px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.hero-btn:hover{
+    background:#e55d00;
+    transform:scale(1.05);
+}
+
+.categories{
+    padding:70px 20px;
+    background:#fafafa;
+    text-align:center;
+}
+
+.categories h2{
+    font-size:38px;
+    margin-bottom:40px;
+}
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:25px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.category-card{
+    background:white;
+    border-radius:15px;
+    padding:35px 20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+    cursor:pointer;
+}
+
+.category-card span{
+    font-size:55px;
+}
+
+.category-card h3{
+    margin-top:15px;
+    font-size:22px;
+}
+
+.category-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+
+.card{
+    position:relative;
+    overflow:hidden;
+}
+
+.badge{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:#ff3b30;
+    color:white;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.favorite{
+    position:absolute;
+    top:15px;
+    right:15px;
+    background:white;
+    width:38px;
+    height:38px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    cursor:pointer;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+    transition:.3s;
+}
+
+.favorite:hover{
+    color:red;
+    transform:scale(1.2);
+}
+
+.old-price{
+    color:gray;
+    text-decoration:line-through;
+    margin:0;
+}
+
+.new-price{
+    color:#ff6b00;
+    font-size:24px;
+    font-weight:bold;
+    margin:5px 0;
+}
+
+.stars{
+    color:#FFD700;
+    margin:10px 0;
+    font-size:18px;
+}
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:999;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 60px;
+    background:white;
+    box-shadow:0 3px 15px rgba(0,0,0,.08);
+}
+
+.logo h2{
+    color:#ff6b00;
+    font-size:30px;
+}
+
+.menu{
+    display:flex;
+    gap:35px;
+    list-style:none;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#333;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#ff6b00;
+}
+
+.nav-icons{
+    display:flex;
+    gap:20px;
+    font-size:22px;
+    cursor:pointer;
+}
+
+.offers{
+    padding:80px 20px;
+    background:#fff4ec;
+    text-align:center;
+}
+
+.offer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.offer-card{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    position:relative;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.offer-card:hover{
+    transform:translateY(-10px);
+}
+
+.offer-card img{
+    width:100%;
+    border-radius:10px;
+}
+
+.promo{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:red;
+    color:white;
+    padding:8px 15px;
+    border-radius:20px;
+    font-weight:bold;
+}
+
+.countdown{
+    margin-top:50px;
+}
+
+.countdown h1{
+    color:#ff6b00;
+    font-size:55px;
+}
+
+.filters{
+    text-align:center;
+    margin:40px 0;
+}
+
+.filters button{
+    padding:12px 25px;
+    margin:8px;
+    border:none;
+    border-radius:30px;
+    background:#ff6b00;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.filters button:hover{
+    background:#222;
+}

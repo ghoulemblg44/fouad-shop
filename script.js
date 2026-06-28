@@ -49,3 +49,48 @@ function removeProduct(index){
 
     updateCart();
 }
+
+let time = 86400;
+
+setInterval(() => {
+
+    let hours = Math.floor(time / 3600);
+
+    let minutes = Math.floor((time % 3600) / 60);
+
+    let seconds = time % 60;
+
+    document.getElementById("timer").textContent =
+        `${hours.toString().padStart(2,'0')}:` +
+        `${minutes.toString().padStart(2,'0')}:` +
+        `${seconds.toString().padStart(2,'0')}`;
+
+    if(time > 0){
+        time--;
+    }
+
+},1000);
+
+function filterProducts(category){
+
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+
+        if(category === "all"){
+
+            card.style.display = "block";
+
+        }else if(card.dataset.category === category){
+
+            card.style.display = "block";
+
+        }else{
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
