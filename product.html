@@ -3,47 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fouad Shop - Produit</title>
+    <title>Fouad Shop — Détail Produit</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-    <h2>🛍️ Fouad Shop</h2>
-</nav>
+    <!-- ===== Navbar ===== -->
+    <header class="nav" id="nav">
+        <div class="nav-inner">
 
-<section class="product-details">
+            <a href="index.html" class="logo">
+                <span class="logo-mark">FS</span>
+                <span class="logo-text">FOUAD<em>SHOP</em></span>
+            </a>
 
-    <img id="product-image" src="">
+            <nav class="menu" id="navMenu">
+                <a href="index.html">Accueil</a>
+                <a href="index.html#products">Produits</a>
+                <a href="index.html#offers">Promotions</a>
+                <a href="index.html#footer">Contact</a>
+            </nav>
 
-    <div class="details">
+            <div class="nav-icons">
+                <button class="icon-btn" aria-label="Favoris"><i class="fa-regular fa-heart"></i></button>
+                <a class="icon-btn cart-btn" href="index.html#cart" aria-label="Panier">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Menu" onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
 
-        <h1 id="product-title"></h1>
+        </div>
+    </header>
 
-        <p class="price" id="product-price"></p>
+    <p class="breadcrumb"><a href="index.html">Accueil</a> / <a href="index.html#products">Produits</a> / <span id="breadcrumb-current"></span></p>
 
-        <p id="product-description"></p>
-        <h3>Taille :</h3>
+    <section class="product-details">
 
-        <select>
-            <option>S</option>
-            <option>M</option>
-            <option>L</option>
-            <option>XL</option>
-        </select>
+        <div class="product-gallery">
+            <img id="product-image" src="" alt="">
+        </div>
 
-        <br><br>
+        <div class="details">
+            <p class="card-category" id="product-category"></p>
+            <h1 id="product-title"></h1>
 
-        <button>Acheter</button>
+            <div class="stars">★★★★★</div>
 
-        <br><br>
+            <p class="price" id="product-price"></p>
 
-        <a href="index.html">⬅ Retour à la boutique</a>
+            <p id="product-description"></p>
 
-    </div>
+            <p class="size-label">Choisir une taille</p>
+            <div class="size-options" id="sizeOptions">
+                <button class="size-btn active" onclick="selectSize(this)">S</button>
+                <button class="size-btn" onclick="selectSize(this)">M</button>
+                <button class="size-btn" onclick="selectSize(this)">L</button>
+                <button class="size-btn" onclick="selectSize(this)">XL</button>
+            </div>
 
-</section>
-<script src="product.js"></script>
+            <button class="btn btn-add" id="addToCartBtn">
+                <i class="fa-solid fa-bag-shopping"></i> Ajouter au panier
+            </button>
 
+            <a href="index.html#products" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i> Retour à la boutique
+            </a>
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+    <script src="product.js"></script>
 </body>
 </html>

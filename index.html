@@ -3,350 +3,409 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fouad Shop</title>
+    <title>Fouad Shop — Mode Homme, Femme &amp; Enfant en Algérie</title>
+    <meta name="description" content="Fouad Shop — vêtements et accessoires pour toute la famille, livraison dans les 58 wilayas, paiement à la livraison.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
+    <!-- ===== Navbar ===== -->
+    <header class="nav" id="nav">
+        <div class="nav-inner">
 
-        <div class="logo">
-            <h2>FOUAD SHOP</h2>
+            <a href="index.html" class="logo">
+                <span class="logo-mark">FS</span>
+                <span class="logo-text">FOUAD<em>SHOP</em></span>
+            </a>
+
+            <nav class="menu" id="navMenu">
+                <a href="index.html">Accueil</a>
+                <a href="#products">Produits</a>
+                <a href="#offers">Promotions</a>
+                <a href="#footer">Contact</a>
+            </nav>
+
+            <div class="nav-icons">
+                <a class="icon-btn" href="#search-box" aria-label="Rechercher"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <button class="icon-btn" aria-label="Favoris"><i class="fa-regular fa-heart"></i></button>
+                <a class="icon-btn cart-btn" href="#cart" aria-label="Panier">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Menu" onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
         </div>
-    
-        <ul class="menu">
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#products">Produits</a></li>
-            <li><a href="#">Promotions</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    
-        <div class="nav-icons">
-            <span>🔍</span>
-            <span>❤️</span>
-            <span>🛒 <strong id="cart-count">0</strong></span>
-        </div>
-    
-    </nav>
-    <section class="hero">
+    </header>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="home">
 
         <div class="slider">
-    
-            <div class="slide active">
-                <img src="tshirt.jpg" alt="">
-            </div>
-    
-            <div class="slide">
-                <img src="hoodie.jpg" alt="">
-            </div>
-    
-            <div class="slide">
-                <img src="jean.jpg" alt="">
-            </div>
-    
+            <div class="slide active"><img src="tshirt.jpg" alt="Collection T-Shirts Fouad Shop"></div>
+            <div class="slide"><img src="hoodie.jpg" alt="Collection Hoodies Fouad Shop"></div>
+            <div class="slide"><img src="jean.jpg" alt="Collection Jeans Fouad Shop"></div>
         </div>
-    
+        <div class="hero-overlay"></div>
+
         <div class="hero-content">
-    
-            <h1>Découvrez les Meilleures Offres</h1>
-    
-            <p>Homme • Femme • Enfant • Accessoires</p>
-    
-            <a href="#products" class="hero-btn">
-                Acheter Maintenant
-            </a>
-    
+            <p class="eyebrow">Nouvelle collection 2026</p>
+            <h1>Le style ne<br>fait pas de pause</h1>
+            <p class="hero-sub">Homme • Femme • Enfant • Accessoires — livrés partout en Algérie</p>
+            <div class="hero-actions">
+                <a href="#products" class="btn btn-primary">Découvrir la collection</a>
+                <a href="#offers" class="btn btn-ghost">Voir les offres</a>
+            </div>
         </div>
-    
+
+        <div class="slider-dots" id="sliderDots">
+            <button class="dot active" onclick="goToSlide(0)" aria-label="Slide 1"></button>
+            <button class="dot" onclick="goToSlide(1)" aria-label="Slide 2"></button>
+            <button class="dot" onclick="goToSlide(2)" aria-label="Slide 3"></button>
+        </div>
     </section>
-    
-    </section>
-    <div class="search-box">
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Rechercher un produit..."
-            onkeyup="searchProducts()"
-        >
+
+    <!-- ===== Marquee strip ===== -->
+    <div class="marquee">
+        <div class="marquee-track">
+            <span><i class="fa-solid fa-truck-fast"></i> Livraison dans les 58 wilayas</span>
+            <span><i class="fa-solid fa-money-bill-wave"></i> Paiement à la livraison</span>
+            <span><i class="fa-solid fa-rotate"></i> Échange facile sous 7 jours</span>
+            <span><i class="fa-solid fa-headset"></i> Support client 7j/7</span>
+            <span><i class="fa-solid fa-truck-fast"></i> Livraison dans les 58 wilayas</span>
+            <span><i class="fa-solid fa-money-bill-wave"></i> Paiement à la livraison</span>
+            <span><i class="fa-solid fa-rotate"></i> Échange facile sous 7 jours</span>
+            <span><i class="fa-solid fa-headset"></i> Support client 7j/7</span>
+        </div>
     </div>
-    <section class="advantages">
 
-        <h2>Pourquoi choisir Fouad Shop ?</h2>
-    
-        <div class="product-grid">
-    
-            <div class="card">
-
-                <span class="badge">Nouveau</span>
-            
-                <span class="favorite">❤</span>
-                <h3>🚚 Livraison Rapide</h3>
-                <p>Partout en Algérie</p>
-            </div>
-    
-            <div class="card">
-
-                <span class="badge">Nouveau</span>
-            
-                <span class="favorite">❤</span>
-                <h3>💎 Qualité</h3>
-                <p>Produits sélectionnés</p>
-            </div>
-    
-            <div class="card">
-
-                <span class="badge">Nouveau</span>
-            
-                <span class="favorite">❤</span>
-                <h3>📞 Support</h3>
-                <p>Disponible sur WhatsApp</p>
-            </div>
-    
-        </div>
-    
+    <!-- ===== Search ===== -->
+    <section class="search-section" id="search-box">
+        <label class="search-box" for="searchInput">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchInput" placeholder="Rechercher un produit..." onkeyup="searchProducts()">
+        </label>
     </section>
+
+    <!-- ===== Filters ===== -->
     <section class="filters">
-
-        <button onclick="filterProducts('all')">Tous</button>
-    
-        <button onclick="filterProducts('homme')">Homme</button>
-    
-        <button onclick="filterProducts('femme')">Femme</button>
-    
-        <button onclick="filterProducts('enfant')">Enfant</button>
-    
-        <button onclick="filterProducts('accessoires')">Accessoires</button>
-    
+        <div class="filters-inner" id="filterButtons">
+            <button class="filter-btn active" data-filter="all" onclick="filterProducts('all', this)">Tous</button>
+            <button class="filter-btn" data-filter="homme" onclick="filterProducts('homme', this)">Homme</button>
+            <button class="filter-btn" data-filter="femme" onclick="filterProducts('femme', this)">Femme</button>
+            <button class="filter-btn" data-filter="enfant" onclick="filterProducts('enfant', this)">Enfant</button>
+            <button class="filter-btn" data-filter="accessoires" onclick="filterProducts('accessoires', this)">Accessoires</button>
+        </div>
     </section>
 
-    <section class="products" id="products">
-        <section class="categories">
-
+    <!-- ===== Categories ===== -->
+    <section class="categories">
+        <div class="section-head">
+            <p class="eyebrow">Explorer</p>
             <h2>Nos Catégories</h2>
-        
-            <div class="category-grid">
-        
-                <div class="category-card">
-                    <span>👨</span>
-                    <h3>Homme</h3>
-                </div>
-        
-                <div class="category-card">
-                    <span>👩</span>
-                    <h3>Femme</h3>
-                </div>
-        
-                <div class="category-card">
-                    <span>👶</span>
-                    <h3>Enfant</h3>
-                </div>
-        
-                <div class="category-card">
-                    <span>🎒</span>
-                    <h3>Accessoires</h3>
-                </div>
-        
-            </div>
-        
-        </section>
+        </div>
+
+        <div class="category-grid">
+            <a href="#products" class="category-card" onclick="filterProducts('homme')">
+                <span class="category-icon">👨</span>
+                <h3>Homme</h3>
+            </a>
+            <a href="#products" class="category-card" onclick="filterProducts('femme')">
+                <span class="category-icon">👩</span>
+                <h3>Femme</h3>
+            </a>
+            <a href="#products" class="category-card" onclick="filterProducts('enfant')">
+                <span class="category-icon">👶</span>
+                <h3>Enfant</h3>
+            </a>
+            <a href="#products" class="category-card" onclick="filterProducts('accessoires')">
+                <span class="category-icon">🎒</span>
+                <h3>Accessoires</h3>
+            </a>
+        </div>
     </section>
 
-        <h2>Nos Produits</h2>
+    <!-- ===== Products ===== -->
+    <section class="products" id="products">
+
+        <div class="section-head">
+            <p class="eyebrow">Sélection</p>
+            <h2>Nos Produits</h2>
+        </div>
 
         <div class="product-grid">
 
-            <div class="card" data-category="homme">
-
-            
-                <a href="product.html?product=tshirt">
-                    <img src="tshirt.jpg" alt="">
-                </a>
-                <h3>Oversize Black T-Shirt</h3>
-                <p class="desc">
-                    Tissu premium - Confortable
-                    </p>
-                    <p class="old-price">3200 DA</p>
-                    <p class="new-price">2500 DA</p>
-                <select>
-                    <option>S</option>
-                    <option>M</option>
-                    <option>L</option>
-                    <option>XL</option>
-                </select>
-                <br><br>
-                <div class="stars">
-                    ⭐⭐⭐⭐⭐
+            <article class="card" data-category="homme">
+                <div class="card-media">
+                    <span class="badge">-22%</span>
+                    <button class="favorite" aria-label="Ajouter aux favoris"><i class="fa-regular fa-heart"></i></button>
+                    <a href="product.html?product=tshirt">
+                        <img src="tshirt.jpg" alt="Oversize Black T-Shirt">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-category">Homme</p>
+                    <h3><a href="product.html?product=tshirt">Oversize Black T-Shirt</a></h3>
+                    <p class="desc">Tissu premium — coupe oversize, confortable au quotidien.</p>
+                    <div class="stars">★★★★★</div>
+                    <div class="card-price">
+                        <span class="old-price">3200 DA</span>
+                        <span class="new-price">2500 DA</span>
                     </div>
-                <button onclick="orderProduct('T-Shirt Noir',2500)">
-                    Acheter
-                </button>
-            </div>
+                    <select aria-label="Taille">
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+                    <button class="btn btn-add" onclick="orderProduct('T-Shirt Noir',2500)">
+                        <i class="fa-solid fa-bag-shopping"></i> Ajouter au panier
+                    </button>
+                </div>
+            </article>
 
-            <div class="card" data-category="homme">
+            <article class="card" data-category="homme">
+                <div class="card-media">
+                    <button class="favorite" aria-label="Ajouter aux favoris"><i class="fa-regular fa-heart"></i></button>
+                    <a href="product.html?product=hoodie">
+                        <img src="hoodie.jpg" alt="Urban Hoodie">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-category">Homme</p>
+                    <h3><a href="product.html?product=hoodie">Urban Hoodie</a></h3>
+                    <p class="desc">Molleton épais — chaud, coupe droite, capuche doublée.</p>
+                    <div class="stars">★★★★★</div>
+                    <div class="card-price">
+                        <span class="new-price">4500 DA</span>
+                    </div>
+                    <select aria-label="Taille">
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+                    <button class="btn btn-add" onclick="orderProduct('Hoodie Blanc',4500)">
+                        <i class="fa-solid fa-bag-shopping"></i> Ajouter au panier
+                    </button>
+                </div>
+            </article>
 
-            
-                <a href="product.html?product=hoodie">
-                    <img src="hoodie.jpg" alt="">
-                </a>
-                <h3>Urban Hoodie</h3>
-                <p class="desc">
-                    Tissu premium - Confortable
-                    </p>
-                <p>4500 DA</p>
-                <select>
-                    <option>S</option>
-                    <option>M</option>
-                    <option>L</option>
-                    <option>XL</option>
-                </select>
-                <br><br>
-                <button onclick="orderProduct('Hoodie Blanc',4500)">
-                    Acheter
-                </button>
-            </div>
-
-            <div class="card" data-category="homme">
-
-            
-                <a href="product.html?product=jean">
-                    <img src="jean.jpg" alt="">
-                </a>
-                <h3>Slim Fit Jeans</h3>
-                <p class="desc">
-                    Tissu premium - Confortable
-                    </p>
-                <p> 3500 DA</p>
-                <select>
-                    <option>S</option>
-                    <option>M</option>
-                    <option>L</option>
-                    <option>XL</option>
-                </select>
-                <br><br>
-                <button onclick="orderProduct('Jean Bleu',3500)">
-                    Acheter
-                </button>
-            </div>
+            <article class="card" data-category="homme">
+                <div class="card-media">
+                    <span class="badge">-12%</span>
+                    <button class="favorite" aria-label="Ajouter aux favoris"><i class="fa-regular fa-heart"></i></button>
+                    <a href="product.html?product=jean">
+                        <img src="jean.jpg" alt="Slim Fit Jeans">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-category">Homme</p>
+                    <h3><a href="product.html?product=jean">Slim Fit Jeans</a></h3>
+                    <p class="desc">Denim extensible — coupe moderne, tient bien sa forme.</p>
+                    <div class="stars">★★★★☆</div>
+                    <div class="card-price">
+                        <span class="old-price">4000 DA</span>
+                        <span class="new-price">3500 DA</span>
+                    </div>
+                    <select aria-label="Taille">
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+                    <button class="btn btn-add" onclick="orderProduct('Jean Bleu',3500)">
+                        <i class="fa-solid fa-bag-shopping"></i> Ajouter au panier
+                    </button>
+                </div>
+            </article>
 
         </div>
 
+        <p class="empty-state" id="emptyState">Aucun produit ne correspond à votre recherche.</p>
     </section>
-    <section class="cart-section">
 
-        <h2>🛒 Mon Panier</h2>
-    
-        <ul id="cart-items"></ul>
-    
-        <h3 id="total">Total : 0 DA</h3>
-    
+    <!-- ===== Cart ===== -->
+    <section class="cart-section" id="cart">
+        <div class="cart-card">
+            <h2><i class="fa-solid fa-bag-shopping"></i> Mon Panier</h2>
+            <ul id="cart-items">
+                <li class="cart-empty">Votre panier est vide pour le moment.</li>
+            </ul>
+            <div class="cart-footer">
+                <h3 id="total">Total : 0 DA</h3>
+                <a href="#order" class="btn btn-primary">Passer la commande</a>
+            </div>
+        </div>
     </section>
-    <section class="order-form">
 
-        <h2>Commander</h2>
-    
-        <input type="text" placeholder="Votre Nom">
-        <input type="tel" placeholder="Téléphone">
-    
-        <select>
-            <option>Khenchela</option>
-            <option>Alger</option>
-            <option>Oran</option>
-            <option>Constantine</option>
-            <option>Blida</option>
-            <option>Sétif</option>
-        </select>
-    
-        <textarea placeholder="Adresse complète"></textarea>
-    
-        <button>Envoyer la commande</button>
-    
+    <!-- ===== Order form ===== -->
+    <section class="order-form" id="order">
+        <div class="section-head">
+            <p class="eyebrow">Dernière étape</p>
+            <h2>Commander</h2>
+        </div>
+
+        <div class="order-card">
+            <input type="text" id="customerName" placeholder="Votre nom complet">
+            <input type="tel" id="customerPhone" placeholder="Numéro de téléphone">
+
+            <select id="customerWilaya">
+                <option>Khenchela</option>
+                <option>Alger</option>
+                <option>Oran</option>
+                <option>Constantine</option>
+                <option>Blida</option>
+                <option>Sétif</option>
+            </select>
+
+            <textarea id="customerAddress" placeholder="Adresse complète"></textarea>
+
+            <button class="btn btn-primary btn-block" onclick="sendOrder()">
+                <i class="fa-brands fa-whatsapp"></i> Envoyer la commande
+            </button>
+            <p class="order-note">Vous serez redirigé vers WhatsApp pour confirmer votre commande.</p>
+        </div>
     </section>
-    <section class="offers">
 
-        <h2>🔥 Offres du Jour</h2>
-    
+    <!-- ===== Offers ===== -->
+    <section class="offers" id="offers">
+        <div class="section-head light">
+            <p class="eyebrow">Aujourd'hui seulement</p>
+            <h2>Offres du Jour</h2>
+        </div>
+
         <div class="offer-grid">
-    
             <div class="offer-card">
                 <span class="promo">-40%</span>
-                <img src="https://via.placeholder.com/220" alt="">
-                <h3>Smart Watch</h3>
-                <p><del>6000 DA</del></p>
-                <h2>3600 DA</h2>
+                <div class="offer-icon"><i class="fa-solid fa-clock"></i></div>
+                <h3>Montre Connectée</h3>
+                <p class="offer-old">6000 DA</p>
+                <p class="offer-new">3600 DA</p>
             </div>
-    
+
             <div class="offer-card">
                 <span class="promo">-30%</span>
-                <img src="https://via.placeholder.com/220" alt="">
+                <div class="offer-icon"><i class="fa-solid fa-headphones-simple"></i></div>
                 <h3>Écouteurs Bluetooth</h3>
-                <p><del>3000 DA</del></p>
-                <h2>2100 DA</h2>
+                <p class="offer-old">3000 DA</p>
+                <p class="offer-new">2100 DA</p>
             </div>
-    
+
             <div class="offer-card">
                 <span class="promo">-50%</span>
-                <img src="https://via.placeholder.com/220" alt="">
+                <div class="offer-icon"><i class="fa-solid fa-backpack"></i></div>
                 <h3>Sac à Dos</h3>
-                <p><del>4000 DA</del></p>
-                <h2>2000 DA</h2>
+                <p class="offer-old">4000 DA</p>
+                <p class="offer-new">2000 DA</p>
             </div>
-    
         </div>
-    
+
         <div class="countdown">
-            ⏰ Fin de l'offre dans :
+            <p>⏰ Fin de l'offre dans</p>
             <h1 id="timer">24:00:00</h1>
         </div>
-    
     </section>
 
- 
-
-    <script src="script.js"></script>
+    <!-- ===== Features ===== -->
     <section class="features">
-
-        <h2>Pourquoi Choisir Fouad Shop ?</h2>
-    
         <div class="features-grid">
-    
             <div class="feature-card">
-                <div class="icon">🚚</div>
+                <div class="icon"><i class="fa-solid fa-truck-fast"></i></div>
                 <h3>Livraison Rapide</h3>
                 <p>Livraison disponible dans les 58 wilayas.</p>
             </div>
-    
             <div class="feature-card">
-                <div class="icon">💰</div>
+                <div class="icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
                 <h3>Paiement à la Livraison</h3>
                 <p>Payez uniquement après réception de votre commande.</p>
             </div>
-    
             <div class="feature-card">
-                <div class="icon">🔄</div>
+                <div class="icon"><i class="fa-solid fa-rotate"></i></div>
                 <h3>Échange Facile</h3>
                 <p>Possibilité d'échanger votre produit facilement.</p>
             </div>
-    
             <div class="feature-card">
-                <div class="icon">📞</div>
+                <div class="icon"><i class="fa-solid fa-headset"></i></div>
                 <h3>Support 7j/7</h3>
                 <p>Notre équipe est disponible pour vous aider.</p>
             </div>
-    
         </div>
-    
     </section>
-    <footer class="footer">
-        <h3>🛍️ Fouad Shop</h3>
-    
-        <p>📞 WhatsApp: +213 XX XX XX XX XX</p>
-        <p>📷 Instagram: @fouadshop</p>
-        <p>📘 Facebook: Fouad Shop</p>
-    
-        <p class="copy">
-            © 2026 Fouad Shop - Tous droits réservés
-        </p>
+
+    <!-- ===== Reviews ===== -->
+    <section class="reviews">
+        <div class="section-head">
+            <p class="eyebrow">Avis clients</p>
+            <h2>Ce que disent nos clients</h2>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Très satisfait de ma commande. Livraison rapide et excellente qualité."</p>
+                <div class="reviewer">
+                    <span class="avatar">Y</span>
+                    <h4>Yacine</h4>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Produit conforme aux photos. Je recommande Fouad Shop."</p>
+                <div class="reviewer">
+                    <span class="avatar">S</span>
+                    <h4>Sarah</h4>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Prix intéressants et service au top."</p>
+                <div class="reviewer">
+                    <span class="avatar">M</span>
+                    <h4>Mohamed</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <span class="logo-text">FOUAD<em>SHOP</em></span>
+                <p>Votre boutique en ligne pour toute la famille.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Navigation</h3>
+                <a href="index.html">Accueil</a>
+                <a href="#products">Produits</a>
+                <a href="#offers">Promotions</a>
+                <a href="#footer">Contact</a>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Algérie</p>
+                <p><i class="fa-solid fa-phone"></i> +213 669 43 23 93</p>
+                <p><i class="fa-solid fa-envelope"></i> contact@fouadshop.com</p>
+            </div>
+        </div>
+
+        <hr>
+        <p class="copyright">© 2026 Fouad Shop — Tous droits réservés.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
