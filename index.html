@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fouad Shop — Mode Homme, Femme &amp; Enfant en Algérie</title>
+    <meta name="description" content="Fouad Shop — vêtements et accessoires pour toute la famille, livraison dans les 58 wilayas, paiement à la livraison.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== Navbar ===== -->
+    <header class="nav" id="nav">
+        <div class="nav-inner">
+
+            <a href="index.html" class="logo">
+                <span class="logo-mark">FS</span>
+                <span class="logo-text">FOUAD<em>SHOP</em></span>
+            </a>
+
+            <nav class="menu" id="navMenu">
+                <a href="index.html">Accueil</a>
+                <a href="#products">Produits</a>
+                <a href="#offers">Promotions</a>
+                <a href="#footer">Contact</a>
+            </nav>
+
+            <div class="nav-icons">
+                <a class="icon-btn" href="#search-box" aria-label="Rechercher"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <button class="icon-btn" aria-label="Favoris"><i class="fa-regular fa-heart"></i></button>
+                <a class="icon-btn cart-btn" href="#cart" aria-label="Panier">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Menu" onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="home">
+
+        <div class="slider">
+            <div class="slide active"><img src="tshirt.jpg" alt="Collection T-Shirts Fouad Shop"></div>
+            <div class="slide"><img src="hoodie.jpg" alt="Collection Hoodies Fouad Shop"></div>
+            <div class="slide"><img src="jean.jpg" alt="Collection Jeans Fouad Shop"></div>
+        </div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <p class="eyebrow">Nouvelle collection 2026</p>
+            <h1>Le style ne<br>fait pas de pause</h1>
+            <p class="hero-sub">Homme • Femme • Enfant • Accessoires — livrés partout en Algérie</p>
+            <div class="hero-actions">
+                <a href="#products" class="btn btn-primary">Découvrir la collection</a>
+                <a href="#offers" class="btn btn-ghost">Voir les offres</a>
+            </div>
+        </div>
+
+        <div class="slider-dots" id="sliderDots">
+            <button class="dot active" onclick="goToSlide(0)" aria-label="Slide 1"></button>
+            <button class="dot" onclick="goToSlide(1)" aria-label="Slide 2"></button>
+            <button class="dot" onclick="goToSlide(2)" aria-label="Slide 3"></button>
+        </div>
+    </section>
+
+    <!-- ===== Marquee strip ===== -->
+    <div class="marquee">
+        <div class="marquee-track">
+            <span><i class="fa-solid fa-truck-fast"></i> Livraison dans les 58 wilayas</span>
+            <span><i class="fa-solid fa-money-bill-wave"></i> Paiement à la livraison</span>
+            <span><i class="fa-solid fa-rotate"></i> Échange facile sous 7 jours</span>
+            <span><i class="fa-solid fa-headset"></i> Support client 7j/7</span>
+            <span><i class="fa-solid fa-truck-fast"></i> Livraison dans les 58 wilayas</span>
+            <span><i class="fa-solid fa-money-bill-wave"></i> Paiement à la livraison</span>
+            <span><i class="fa-solid fa-rotate"></i> Échange facile sous 7 jours</span>
+            <span><i class="fa-solid fa-headset"></i> Support client 7j/7</span>
+        </div>
+    </div>
+
+    <!-- ===== Search ===== -->
+    <section class="search-section" id="search-box">
+        <label class="search-box" for="searchInput">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchInput" placeholder="Rechercher un produit..." oninput="searchProducts()">
+        </label>
+    </section>
+
+    <!-- ===== Filters ===== -->
+    <section class="filters">
+        <div class="filters-inner" id="filterButtons">
+            <button class="filter-btn active" data-filter="all" onclick="filterProducts('all', this)">Tous</button>
+            <button class="filter-btn" data-filter="homme" onclick="filterProducts('homme', this)">Homme</button>
+            <button class="filter-btn" data-filter="femme" onclick="filterProducts('femme', this)">Femme</button>
+            <button class="filter-btn" data-filter="enfant" onclick="filterProducts('enfant', this)">Enfant</button>
+            <button class="filter-btn" data-filter="accessoires" onclick="filterProducts('accessoires', this)">Accessoires</button>
+            <button class="filter-btn" data-filter="featured" onclick="filterProducts('featured', this)">★ Vedette</button>
+        </div>
+
+        <div class="filters-extra">
+            <div class="price-filter">
+                <label for="minPrice">Prix</label>
+                <input type="number" id="minPrice" placeholder="Min" min="0" oninput="applySortAndPrice()">
+                <span>—</span>
+                <input type="number" id="maxPrice" placeholder="Max" min="0" oninput="applySortAndPrice()">
+            </div>
+
+            <select id="sortSelect" onchange="applySortAndPrice()">
+                <option value="newest">Plus récents</option>
+                <option value="price-asc">Prix croissant</option>
+                <option value="price-desc">Prix décroissant</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- ===== Categories ===== -->
+    <section class="categories">
+        <div class="section-head">
+            <p class="eyebrow">Explorer</p>
+            <h2>Nos Catégories</h2>
+        </div>
+
+        <div class="category-grid">
+            <a href="#products" class="category-card" onclick="filterProducts('homme')">
+                <span class="category-icon">👨</span>
+                <h3>Homme</h3>
+            </a>
+            <a href="#products" class="category-card" onclick="filterProducts('femme')">
+                <span class="category-icon">👩</span>
+                <h3>Femme</h3>
+            </a>
+            <a href="#products" class="category-card" onclick="filterProducts('enfant')">
+                <span class="category-icon">👶</span>
+                <h3>Enfant</h3>
+            </a>
+            <a href="#products" class="category-card" onclick="filterProducts('accessoires')">
+                <span class="category-icon">🎒</span>
+                <h3>Accessoires</h3>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== Products ===== -->
+    <section class="products" id="products">
+
+        <div class="section-head">
+            <p class="eyebrow">Sélection</p>
+            <h2>Nos Produits</h2>
+        </div>
+        <div class="product-grid" id="product-grid">
+
+        </div>
+        
+        <p class="empty-state" id="emptyState">
+            Aucun produit ne correspond à votre recherche. 
+        </p>
+    </section>
+
+    <!-- ===== Cart ===== -->
+    <section class="cart-section" id="cart">
+        <div class="cart-card">
+            <h2><i class="fa-solid fa-bag-shopping"></i> Mon Panier</h2>
+            <ul id="cart-items">
+                <li class="cart-empty">Votre panier est vide pour le moment.</li>
+            </ul>
+            <div class="cart-footer">
+                <h3 id="total">Total : 0 DA</h3>
+                <a href="#order" class="btn btn-primary">Passer la commande</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Order form ===== -->
+    <section class="order-form" id="order">
+        <div class="section-head">
+            <p class="eyebrow">Dernière étape</p>
+            <h2>Commander</h2>
+        </div>
+
+        <div class="order-card">
+            <input type="text" id="customerName" placeholder="Votre nom complet">
+            <input type="tel" id="customerPhone" placeholder="Numéro de téléphone">
+
+            <select id="customerWilaya">
+                <option>Khenchela</option>
+                <option>Alger</option>
+                <option>Oran</option>
+                <option>Constantine</option>
+                <option>Blida</option>
+                <option>Sétif</option>
+            </select>
+
+            <textarea id="customerAddress" placeholder="Adresse complète"></textarea>
+            <textarea id="customerNotes" placeholder="Remarques de livraison (optionnel)"></textarea>
+
+            <fieldset class="payment-methods">
+                <legend>Mode de paiement</legend>
+                <label class="payment-option">
+                    <input type="radio" name="paymentMethod" value="cod" checked>
+                    <span><i class="fa-solid fa-hand-holding-dollar"></i> Paiement à la livraison</span>
+                </label>
+                <label class="payment-option payment-option-disabled">
+                    <input type="radio" name="paymentMethod" value="card" disabled>
+                    <span><i class="fa-solid fa-credit-card"></i> Carte bancaire (bientôt disponible)</span>
+                </label>
+            </fieldset>
+
+            <div id="orderDeliverySummary" class="delivery-summary"></div>
+
+            <button class="btn btn-primary btn-block" onclick="sendOrder()" id="sendOrderBtn">
+                <i class="fa-solid fa-bag-shopping"></i> Passer la commande
+            </button>
+            <p class="order-note">Votre commande sera enregistrée directement dans notre système.</p>
+        </div>
+    </section>
+
+    <!-- ===== Offers ===== -->
+    <section class="offers" id="offers">
+        <div class="section-head light">
+            <p class="eyebrow">Aujourd'hui seulement</p>
+            <h2>Offres du Jour</h2>
+        </div>
+
+        <div class="offer-grid">
+            <div class="offer-card">
+                <span class="promo">-40%</span>
+                <div class="offer-icon"><i class="fa-solid fa-clock"></i></div>
+                <h3>Montre Connectée</h3>
+                <p class="offer-old">6000 DA</p>
+                <p class="offer-new">3600 DA</p>
+            </div>
+
+            <div class="offer-card">
+                <span class="promo">-30%</span>
+                <div class="offer-icon"><i class="fa-solid fa-headphones-simple"></i></div>
+                <h3>Écouteurs Bluetooth</h3>
+                <p class="offer-old">3000 DA</p>
+                <p class="offer-new">2100 DA</p>
+            </div>
+
+            <div class="offer-card">
+                <span class="promo">-50%</span>
+                <div class="offer-icon"><i class="fa-solid fa-backpack"></i></div>
+                <h3>Sac à Dos</h3>
+                <p class="offer-old">4000 DA</p>
+                <p class="offer-new">2000 DA</p>
+            </div>
+        </div>
+
+        <div class="countdown">
+            <p>⏰ Fin de l'offre dans</p>
+            <h1 id="timer">24:00:00</h1>
+        </div>
+    </section>
+
+    <!-- ===== Features ===== -->
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon"><i class="fa-solid fa-truck-fast"></i></div>
+                <h3>Livraison Rapide</h3>
+                <p>Livraison disponible dans les 58 wilayas.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                <h3>Paiement à la Livraison</h3>
+                <p>Payez uniquement après réception de votre commande.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon"><i class="fa-solid fa-rotate"></i></div>
+                <h3>Échange Facile</h3>
+                <p>Possibilité d'échanger votre produit facilement.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon"><i class="fa-solid fa-headset"></i></div>
+                <h3>Support 7j/7</h3>
+                <p>Notre équipe est disponible pour vous aider.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Reviews ===== -->
+    <section class="reviews">
+        <div class="section-head">
+            <p class="eyebrow">Avis clients</p>
+            <h2>Ce que disent nos clients</h2>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Très satisfait de ma commande. Livraison rapide et excellente qualité."</p>
+                <div class="reviewer">
+                    <span class="avatar">Y</span>
+                    <h4>Yacine</h4>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Produit conforme aux photos. Je recommande Fouad Shop."</p>
+                <div class="reviewer">
+                    <span class="avatar">S</span>
+                    <h4>Sarah</h4>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Prix intéressants et service au top."</p>
+                <div class="reviewer">
+                    <span class="avatar">M</span>
+                    <h4>Mohamed</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <span class="logo-text">FOUAD<em>SHOP</em></span>
+                <p>Votre boutique en ligne pour toute la famille.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Navigation</h3>
+                <a href="index.html">Accueil</a>
+                <a href="#products">Produits</a>
+                <a href="#offers">Promotions</a>
+                <a href="#footer">Contact</a>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Algérie</p>
+                <p><i class="fa-solid fa-phone"></i> +213 669 43 23 93</p>
+                <p><i class="fa-solid fa-envelope"></i> contact@fouadshop.com</p>
+            </div>
+        </div>
+
+        <hr>
+        <p class="copyright">© 2026 Fouad Shop — Tous droits réservés.</p>
+    </footer>
+
+    <!-- ===== Order confirmation ===== -->
+    <div class="order-success-overlay" id="orderSuccessOverlay">
+        <div class="order-success-card">
+            <div class="order-success-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h3>Commande confirmée !</h3>
+            <p>Merci <strong id="orderSuccessName"></strong>, votre commande a bien été enregistrée.</p>
+            <p class="order-success-meta" id="orderSuccessMeta"></p>
+            <p class="order-success-sub">Notre équipe vous contactera bientôt pour confirmer la livraison.</p>
+            <button class="btn btn-primary btn-block" onclick="closeOrderSuccess()">Continuer mes achats</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

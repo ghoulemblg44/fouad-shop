@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard - Fouad Shop</title>
+
+<link rel="stylesheet" href="admin.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== Login ===== -->
+<section id="loginSection" class="login-screen">
+    <form id="loginForm" class="login-card">
+        <div class="login-logo">FOUAD<em>SHOP</em></div>
+        <p class="login-sub">Connexion à l'espace administrateur</p>
+
+        <label>Nom d'utilisateur</label>
+        <input type="text" id="loginUsername" placeholder="admin" required autocomplete="username">
+
+        <label>Mot de passe</label>
+        <input type="password" id="loginPassword" placeholder="••••••••" required autocomplete="current-password">
+
+        <button type="submit" class="btn btn-primary btn-block" id="loginBtn">Se connecter</button>
+        <p id="loginError" class="login-error"></p>
+    </form>
+</section>
+
+<!-- ===== App shell ===== -->
+<div id="appShell" class="app" hidden>
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">FOUAD<em>SHOP</em></div>
+
+        <ul class="menu">
+            <li class="menu-item active" data-page="home"><i class="fa-solid fa-gauge"></i> Tableau de bord</li>
+            <li class="menu-item" data-page="products"><i class="fa-solid fa-box"></i> Produits</li>
+            <li class="menu-item" data-page="orders"><i class="fa-solid fa-cart-shopping"></i> Commandes</li>
+            <li class="menu-item" data-page="customers"><i class="fa-solid fa-users"></i> Clients</li>
+            <li class="menu-item" data-page="statistics"><i class="fa-solid fa-chart-line"></i> Statistiques</li>
+            <li class="menu-item" data-page="settings"><i class="fa-solid fa-gear"></i> Paramètres</li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <div class="admin-chip"><i class="fa-solid fa-circle-user"></i> <span id="adminUsername">admin</span></div>
+            <button id="logoutBtn" class="btn btn-ghost-dark btn-block"><i class="fa-solid fa-right-from-bracket"></i> Déconnexion</button>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <h1 id="pageTitle">Tableau de bord</h1>
+        </header>
+
+        <div class="content">
+            <div id="page-home" class="page"></div>
+            <div id="page-products" class="page" hidden></div>
+            <div id="page-orders" class="page" hidden></div>
+            <div id="page-customers" class="page" hidden></div>
+            <div id="page-statistics" class="page" hidden></div>
+            <div id="page-settings" class="page" hidden></div>
+        </div>
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="admin/utils.js"></script>
+<script src="admin/api.js"></script>
+<script src="admin/router.js"></script>
+<script src="admin/dashboard.js"></script>
+<script src="admin/products.js"></script>
+<script src="admin/orders.js"></script>
+<script src="admin/customers.js"></script>
+<script src="admin/statistics.js"></script>
+<script src="admin/settings.js"></script>
+<script src="admin/main.js"></script>
+</body>
+</html>
